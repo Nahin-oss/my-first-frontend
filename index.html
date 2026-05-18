@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KITCHENOIR — Modern Dark Cookbook</title>
+  <meta name="description" content="KITCHENOIR is a sleek, dark-themed digital cookbook featuring curated recipes across starters, mains, and desserts." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/recipes.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">kitchen<span>oir</span></a>
+      <nav class="nav-links">
+        <a href="index.html" class="active" id="nav-home">Recipes</a>
+        <a href="#" id="nav-favs">Saved <span class="fav-count" id="fav-count">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">A Curated Collection</span>
+      <h1>Cook<br>Book</h1>
+      <p class="hero-subtitle">Browse, cook, and save your favorites — entirely in your browser.</p>
+      <div class="hero-line"></div>
+    </div>
+  </section>
+
+  <!-- Filters + Grid -->
+  <section class="container">
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="Starters">Starters</button>
+      <button class="filter-btn" data-filter="Mains">Mains</button>
+      <button class="filter-btn" data-filter="Desserts">Desserts</button>
+      <button class="filter-btn" data-filter="Saved">Saved</button>
+    </div>
+
+    <div class="section-header">
+      <h2>Recipes</h2>
+      <span class="section-count" id="recipe-count"></span>
+    </div>
+
+    <div class="recipe-grid" id="recipe-grid"></div>
+  </section>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Kitchenoir</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe — KITCHENOIR</title>
+  <meta name="description" content="Detailed recipe view on KITCHENOIR." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/recipes.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">kitchen<span>oir</span></a>
+      <nav class="nav-links">
+        <a href="index.html" id="nav-home">Recipes</a>
+        <a href="#" id="nav-favs">Saved <span class="fav-count" id="fav-count">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Detail Hero -->
+  <div class="detail-hero" id="detail-hero">
+    <img id="detail-img" src="" alt="" />
+    <div class="detail-hero__overlay"></div>
+  </div>
+
+  <!-- Detail Content -->
+  <article class="detail-content" id="detail-content"></article>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Kitchenoir</p>
+    </div>
+  </footer>
+
+  <script src="js/recipe.js"></script>
+</body>
+</html>
