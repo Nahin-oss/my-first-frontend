@@ -82,6 +82,7 @@
   }
 
   let currentFilter = 'All';
+  let searchQuery = '';
 
   function renderGrid() {
     const grid = document.getElementById('recipe-grid');
@@ -92,9 +93,18 @@
     const favs = getFavorites();
 
     const filtered = recipes.filter((r) => {
-      if (currentFilter === 'All') return true;
-      if (currentFilter === 'Saved') return favs.includes(r.id);
-      return r.category === currentFilter;
+      let matchFilter = true;
+      if (currentFilter === 'Saved') matchFilter = favs.includes(r.id);
+      else if (currentFilter !== 'All') matchFilter = r.category === currentFilter;
+
+      let matchSearch = true;
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        matchSearch = r.title.toLowerCase().includes(query) || 
+                      r.description.toLowerCase().includes(query) ||
+                      r.category.toLowerCase().includes(query);
+      }
+      return matchFilter && matchSearch;
     });
 
     if (countEl) countEl.textContent = `( ${filtered.length} )`;
@@ -120,6 +130,15 @@
           card.style.transform = 'translateY(0)';
         }, i * 100);
       });
+    });
+  }
+
+  function initSearch() {
+    const searchInput = document.getElementById('recipe-search');
+    if (!searchInput) return;
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderGrid();
     });
   }
 
@@ -173,6 +192,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     updateFavCount();
+    initSearch();
     initFilters();
     initNavFavs();
     initHeaderScroll();
